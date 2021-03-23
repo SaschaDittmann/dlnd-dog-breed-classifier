@@ -20,6 +20,8 @@ I used the following two datasets for training the models:
 * Download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip)
 * Download the [human_dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip)
 
+I used images from [Unsplash](https://unsplash.com/) to test the final algorithm
+
 ## Creating a CNN to Classify Dog Breeds from Scratch
 
 My CNN structure for this task looks like this:
