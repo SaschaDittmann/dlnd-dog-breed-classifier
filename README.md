@@ -9,7 +9,7 @@ It is implemented by using the OpenCV and PyTorch libraries.
 
 Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images. Given an image of a dog, your algorithm will identify an estimate of the canine’s breed. If supplied an image of a human, the code will identify the resembling dog breed.
 
-[![Sample Output](https://github.com/udacity/deep-learning-v2-pytorch/raw/master/project-dog-classification/images/sample_dog_output.png)](https://github.com/udacity/deep-learning-v2-pytorch/blob/master/project-dog-classification/images/sample_dog_output.png)
+![Sample Output](./images/sample_dog_output.png)
 
 Along with exploring state-of-the-art CNN models for classification and localization, you will make important design decisions about the user experience for your app. Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline. Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer. Your imperfect solution will nonetheless create a fun user experience!
 
@@ -31,24 +31,29 @@ My CNN structure for this task looks like this:
         Layer (type)               Output Shape         Param #
 ================================================================
             Conv2d-1         [-1, 16, 224, 224]             448
-         MaxPool2d-2         [-1, 16, 112, 112]               0
-            Conv2d-3         [-1, 32, 112, 112]           4,640
-         MaxPool2d-4           [-1, 32, 56, 56]               0
-            Conv2d-5           [-1, 64, 56, 56]          18,496
-         MaxPool2d-6           [-1, 64, 28, 28]               0
-           Dropout-7           [-1, 64, 28, 28]               0
-            Linear-8                  [-1, 512]      25,690,624
-           Dropout-9                  [-1, 512]               0
-           Linear-10                  [-1, 133]          68,229
+              ReLU-2         [-1, 16, 224, 224]               0
+         MaxPool2d-3         [-1, 16, 112, 112]               0
+            Conv2d-4         [-1, 32, 112, 112]           4,640
+              ReLU-5         [-1, 32, 112, 112]               0
+         MaxPool2d-6           [-1, 32, 56, 56]               0
+            Conv2d-7           [-1, 64, 56, 56]          18,496
+              ReLU-8           [-1, 64, 56, 56]               0
+         MaxPool2d-9           [-1, 64, 28, 28]               0
+          Dropout-10           [-1, 64, 28, 28]               0
+           Linear-11                  [-1, 512]      25,690,624
+             ReLU-12                  [-1, 512]               0
+          Dropout-13                  [-1, 512]               0
+           Linear-14                  [-1, 133]          68,229
+       LogSoftmax-15                  [-1, 133]               0
 ================================================================
 Total params: 25,782,437
 Trainable params: 25,782,437
 Non-trainable params: 0
 ----------------------------------------------------------------
 Input size (MB): 0.57
-Forward/backward pass size (MB): 13.79
+Forward/backward pass size (MB): 24.51
 Params size (MB): 98.35
-Estimated Total Size (MB): 112.72
+Estimated Total Size (MB): 123.44
 ----------------------------------------------------------------
 ```
 
